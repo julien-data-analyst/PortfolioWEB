@@ -1,0 +1,131 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 3.VCOD.01 : Collecte automatisée de données web</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='accountant-calculating-profit-with-financial-analysis-graphs.jpg') }}" 
+       width="20%"
+       height="20%"
+       alt="finance_graphs">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        Dans le cadre de ce projet, nous devions faire une collecte automatisée de données web à l'aide d'<strong>API</strong>. 
+        Le sujet est de développer une plateforme de suivi des performances financières sur un intervalle de deux ans. 
+        Il permettra aux utilisateurs d'analyser les données mensuelles des 
+        <strong>entreprises notoires dans le but de les aider à prendre des décisions</strong>. 
+        Pour aider dans ce projet, 
+        deux API vont être utilisés qui sont l'<a target="_blank" href="https://www.alphavantage.co/">Alpha Vantage</a> 
+        pour le prix des actions et <a target="_blank" href="https://gnews.io/">GNews</a> pour les actualités pertinentes sur le marché. 
+        À la fin de ce projet, nous devions rendre :
+        <ul class="texte-projet">
+        <li>Un dossier zip contenant les scripts <strong>Python</strong> dans une architecture définie et organisée</li>
+        </ul>
+        <p class="texte-projet">
+        Nous avions un oral de présentation de 10 minutes. Nous étions 3 personnes pour réaliser ce projet.
+        </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Pour l'organisation du travail, nous avons, dans un premier temps, fait la collecte de données. 
+        Ensuite, nous avons effectué <strong>la création de la base de données (SQL) et de la gestion de celle-ci (classes de métiers)</strong>. 
+        Pour terminer, nous avons mis en place une interface console pour aider l'utilisateur à choisir quelle vision. 
+        L'organisation de travail a été la suivante :
+        <ul class="texte-projet">
+            <li>Le premier membre s'occupait de la collecte des actions sur l'Alpha Vantage, 
+                de la gestion dans la base des entreprises et de l'option permettant de lister les entreprises.</li>
+
+            <li>Le deuxième membre concevait la création de la base de données, de la gestion des actions (prix et volumes) 
+                dans la base et de l'option sur les données mensuelles d'une action pour une année complète et, parfois, sur un mois précis.</li>
+            
+            <li>De mon côté, je m'occupais de la collecte des articles sur GNews, de l'insertion des données dans la base, de la gestion des articles 
+                concernant les entreprises dans la base, des deux options sur les variations mensuelles des actions d'une année demandée 
+                et des articles concernant une entreprise pour une année.</li>
+        </ul>
+            <p class="texte-projet">
+                Par ailleurs, nous devions faire une sortie HTML/CSS/JavaScript du résultat de l'option demandée.
+            </p>
+    </p>
+
+    <!-- Ajout des images d'illustrations-->
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='collecte_automatise/Liste_entreprise.png.1.png') }}"
+           alt="Liste des entreprises avec leurs actions">
+          <figcaption>Liste des entreprises avec leurs actions</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='collecte_automatise/Article.png') }}" 
+          class="proj-img rounded-4" alt="Résultat d'articles Tesla">
+          <figcaption>Exemple de résultat d'articles</figcaption>
+        </figure>
+      </div>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Les plus grosses difficultés de ce projet étaient <strong>dans la collecte de données (articles) et dans la création de la base de données</strong>.
+        Premièrement, la difficulté se portait dans la collecte des articles sur GNews où il y a une <strong>limitation de requêtes de 100</strong>. 
+        Ne pouvant faire une collecte <storng>mensuelle</strong> sur deux ans, nous avons décidé de la passer en <strong>trimestrielle</strong>. 
+        Deuxièmement, les articles récoltés avaient souvent <strong>que très peu de pertinences au sujet de l'action de l'entreprise</strong>.
+        La deuxième plus grosse difficulté était dans la création de la base de données notamment dans sa conception. 
+        On a, par obligation des contraintes du projet, changé le modèle conceptuel de la base en cours de route ce qui amenait souvent à des changements dans les différents scripts. 
+        À cet effet, nous avons mis en place plusieurs réunions nous permettant de confronter nos idées et de réussir à 
+        mettre en place un modèle qui répond aux différentes attentes.
+    </p>
+  </li>
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, je me suis amélioré dans l'approche objet en Python et dans l'organisation d'une architecture. 
+        J'ai appris à collecter des données à l'aide d'API. Cependant, je dois encore 
+        m'améliorer dans la création d'une base de données relationnelle et dans la gestion d'un projet notamment dans la présentation orale.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='collecte_automatise/Variations.png') }}"
+       alt="Tableau web des variations d'actions d'une entreprise">
+      <figcaption>Tableau des variations d'actions d'une entreprise</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='collecte_automatise/Tableaux_valeurs_action.png') }}" 
+      class="proj-img rounded-4" alt="Tableaux des valeurs d'actions d'une entreprise"
+      >
+      <img src="{{ url_for('static', filename='collecte_automatise/Mois_précis.png') }}" 
+      class="proj-img rounded-4" alt="Tableau contenant le mois précis d'une action d'une entreprise"
+      >
+      <figcaption>Tableaux des valeurs d'action d'une entreprise</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='collecte_automatise/Collecte_automatise_donnees_web.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

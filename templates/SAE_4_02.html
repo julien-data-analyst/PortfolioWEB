@@ -1,0 +1,120 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 4.02 : Reporting d'une analyse multivariée</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='Mutualite_sociale_agricole_logo.svg.png') }}" 
+       width="20%"
+       height="20%"
+       alt="Mutualité sociale agricole logo">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+        Dans le cadre de ce projet, on devait mener une <strong>analyse multivariée</strong> sur les agriculteurs affiliés au <strong>régime agricole 
+        d'assurance maladie (Mutualité Sociale Agricole)</strong>. Elle se portait notamment sur un questionnaire d'inclusion, 
+        plus spécifiquement sur les <strong>activités d'élevage et de culture</strong>. On devait rendre à la fin de ce projet :
+    <ul class="texte-projet">
+        <li>Un rapport en <strong>R-Markdown</strong> avec son résultat au format PDF contenant <strong>le code et l'interprétation de l'analyse.</strong></li>
+    </ul>
+    <p class="texte-projet">Nous étions deux pour faire ce projet.</p>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Pour ce projet, nous avons donc dû suivre un cahier des charges extrêmement strict demandant notamment :
+        <ul class="texte-projet">
+        <li>L'annotation du CRF/questionnaire.</li>
+        <li>Le calcul d'indicateurs tels que des durées et des ratios 
+        (professionnelles, activités et tâches agricoles).</li>
+    <li>La réalisation d'une Analyse en Composante Principale (ACP) à partir des ratios d'activités d'élevage et de culture.</li>
+    <li>La réalisation d'un classement (clustering) sur les données de l'ACP.</li>
+    <li>La description des clusters.</li>
+        </ul>
+    <p class="texte-projet">
+        Pour ces différentes parties, nous avons d'abord effectué la première partie ensemble pour partir sur un même niveau d'information. 
+        Pour la deuxième partie, j'ai pris en charge le calcul des durées professionnelles et d'activités 
+        tandis que l'autre membre s'occupait de calculer la durée des tâches agricoles. 
+        En ce qui concerne les ratios, je me suis occupé à calculer le ratio d'activité agricole 
+        tandis que l'autre membre du groupe s'occupait de calculer le ratio de la tâche agricole. 
+        À la suite de la deuxième partie, nous avons réalisé l'ACP tant dans la programmation que dans l'interprétation de celle-ci. 
+        Les deux dernières parties ont été faites par moi seulement tant dans la réalisation que dans l'interprétation des différents groupes.
+    </p>
+
+    </p>
+
+    <!-- Ajout des images d'illustrations-->
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='reporting_multivariee/Analyse_multivariee (1).png') }}"
+           alt="Composantes principales">
+          <figcaption>Tableau des composantes principales de l'ACP sur les ratios</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='reporting_multivariee/Analyse_multivariee (2).png') }}" 
+          class="proj-img rounded-4" alt="Nombre de clusters optimal K-Means">
+          <figcaption>Courbe du nombre de clusters optimal pour les K-Means</figcaption>
+        </figure>
+      </div>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Les difficultés de ce projet étaient surtout dans la préparation des données et dans l'interprétation des résultats. 
+        La préparation des données était ralentie par le temps d'exécution de certaines parties du programme. 
+        Il fallait donc minimiser ce temps pour pouvoir avancer le plus vite possible sur les autres parties. 
+        Pour ce faire, après la préparation des données, nous avons exporté les données préparées dans un fichier au format RDS. 
+        Cela permettait de gagner du temps pour se concentrer sur l'analyse. 
+        Les résultats peuvent se révéler assez complexes et nécessitent une interprétation le plus compréhensible. 
+        Cela permettra au lecteur lambda de comprendre le résultat obtenu et ce qui en ressort concrètement.
+    </p>
+  </li>
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, le projet m'a permis de développer mes compétences tant dans <strong>l'analyse en composante principale, 
+        mais aussi dans la classification des individus</strong>. 
+        Cependant, il faut que je m'améliore encore dans l'interprétation des résultats pour pouvoir l'expliquer simplement.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='reporting_multivariee/Analyse_multivariee (3).png') }}"
+       alt="Effectif des clusters">
+      <figcaption>Effectif des clusters</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='reporting_multivariee/Analyse_multivariee (4).png') }}" 
+      class="proj-img rounded-4" alt="Caractéristique des clusters"
+      >
+      <figcaption>Tableau des caractéristiques des clusters</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='reporting_multivariee/Analyse_multivariee.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 5.VCOD.01 : Analyse et conception d'outil décisionnel</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='logo_cinema.jpg') }}" 
+       width="20%"
+       height="20%"
+       alt="logo Cinéma">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        Ce projet avait pour objectif de créer une <strong>application web sur le thème du cinéma</strong>. 
+        Les utilisateurs pouvaient faire des recherches de films selon divers critères. 
+        Pour y parvenir, nous avons utilisé le <strong>framework Flask en Python</strong> pour la conception de l'application web, 
+        ainsi qu'une <strong>base de données SQLite</strong> afin de gérer l'interaction avec le site.
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        <ul class="texte-projet">
+            <li><strong>Modalité</strong> : travail de groupe (4)</li>
+            <li><strong>Suivi</strong> : réunion présentielle/visioconférence</li>
+            <li><strong>Ressources</strong> : cours de développement web (Flask), modélisation logiciel (UML, DC, DCU)</li>
+            <li><strong>Outil</strong> : <strong>Python (Flask), langages web (HTML, CSS, JS) et GitHub</strong></li>
+            <li><strong>Livrables</strong> : présentation orale (10 minutes) et rendre l'arborescence du projet</li>
+        </ul>
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Ce projet s'est articulé en plusieurs étapes clés :
+
+        <ul class="texte-projet">
+        <li><strong>Conception des diagrammes UML</strong> : Cette phase a permis, d'une part, 
+        de définir les principales fonctionnalités de l'application en adoptant une approche centrée sur l'utilisateur, 
+        et d'autre part, d'établir un modèle structuré pour la base de données.</li>
+        <li><strong>Préparation et insertion des données</strong> : Nous avons travaillé à partir d'un fichier CSV contenant 44 691 films, 
+            incluant leur synopsis, leur réalisateur, leurs acteurs et d'autres informations. 
+            Cette étape a été la plus chronophage en raison des nombreuses erreurs présentes dans les données, 
+            nécessitant un nettoyage minutieux avant leur insertion.</li>
+        <li><strong>Requêtes sur la base de données</strong> : Mon rôle consistait à interroger la base de données pour générer des visuels graphiques, 
+            des indicateurs de performance (KPI) et des formulaires. Cette tâche s'est avérée complexe, 
+            car notre modèle relationnel manquait de stabilité, nous obligeant à ajuster régulièrement le schéma de la base.</li>
+
+        <li><strong>Mise en page du site web</strong> : Cette étape concernait la structuration et le design de la page web à l'aide des langages 
+        HTML, CSS et JavaScript. L'objectif était de créer une interface à la fois attrayante et intuitive pour les utilisateurs.</li>
+        <li><strong>Mise en place des formulaires</strong> : Avec un camarade, nous avons développé deux formulaires interactifs. 
+            Le premier permettait de rechercher des films par titre ou par genre, tandis que le second facilitait la recherche de films en 
+            fonction du réalisateur.</li>
+        </ul>
+        <p class="texte-projet">
+        Afin de mieux coordonner notre travail et de fluidifier nos échanges, nous avons utilisé GitHub, un gestionnaire de projets. 
+        Cet outil nous a permis de collaborer efficacement 
+        sur chaque partie du projet sans être contraints d'attendre les avancées des autres membres de l'équipe.
+        </p>
+    </p>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, ce projet m'a permis de découvrir le contexte de création d'une application web passant de la conception au 
+        lancement du site après finition. Cependant, 
+        je dois apprendre à mieux travailler en équipe pour améliorer la performance du développement et ne pas avoir un manque de communication.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+
+<div class="video-container">
+    <video controls width="80%">
+
+        <source src="{{ url_for('static', filename='application_web/Application web cinema – Réalisée avec Microsoft Clipchamp_1739999261364.mp4') }}" 
+        type="video/mp4" />
+
+    </video>
+</div>
+  <div class="center">
+    <a target="_blank" href="https://github.com/julien-data-analyst/Application_web_film">
+        <button class="download-btn">Voir le projet sur GitHub</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

@@ -1,0 +1,128 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 2.04 : Datavisualisation</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='Sncf-logo.svg.png') }}" 
+       width="20%"
+       height="20%"
+       alt="proxi_logo">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+      La datavisualisation est un concours entre tous les étudiants de première année en BUT Science des Données. Il consiste à représenter des visualisations à l’aide du logiciel Tableau apportant une analyse concrète sur une problématique créée. Les données proposées pour cette année sont sûres sur la fréquentation annuelle des gares de la SNCF avec des informations socio-économiques de 2019 et 2020. On devait faire ce travail de 9h00 à 15h30 et ensuite faire une présentation orale de nos résultats. Il fallait donc rendre dans ce projet :
+      <ul class="texte-projet">
+        <li>Un fichier <strong>Tableau</strong> qui réunit toutes les visualisations</li>
+      </ul>
+      <p class="texte-projet">
+      Pour ce concours, nous étions dans un groupe de 4.
+    </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+      Dans notre groupe, nous avons, d'abord, lu le fichier dans le but de comprendre quelles sont les informations pertinentes à retenir. 
+      Ensuite, nous avons choisi la problématique pour ainsi faire les différentes visualisations. 
+      Enfin, nous avons réuni les différentes visualisations en discutant des différentes améliorations possibles. Pour la présentation orale, 
+      nous avons chacun présenté une visualisation que nous avons faite en expliquant pourquoi elle apporte une réponse à la problématique.
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+      La première difficulté était, comme je l'ai dit au-dessus, la compréhension des données, 
+      car la valeur de certaines variables était assez compliquée à comprendre. 
+      La deuxième difficulté était de trouver une problématique cohérente avec le fichier de données. 
+      Nous nous sommes réunis et nous avons réfléchi ensemble : comment pouvons-nous exploiter ce fichier de données ? 
+      C'est ainsi que nous nous sommes posés la problématique suivante : 
+      Quels sont les facteurs qui semblent expliquer le taux de pénétration des gares en 2019 ? 
+      Focus sur les deux régions aux taux extrêmes (hors Île-de-France et Océanie) : Grand-Est et Pays de la Loire. 
+      Après avoir trouvé la problématique, il ne restait plus qu'à faire les différentes visualisations et les réunir. 
+      Nous avons pu trouver 6 visualisations possibles. Lors de la dernière réunion, nous avons fait le choix, collectivement, 
+      d'en laisser une de côté. 
+      La discussion entre les membres de l'équipe nous a permis de faire ces choix nous donnant 5 visualisations, 
+      dont une pour l'introduction. Les quatre autres permettaient d'apporter une réponse à la problématique :
+    
+      <ul class="texte-projet">
+        <li>Comment les départements d'une région et la densité de la population impactent le taux de pénétration ? (Faits par deux membres du groupe)</li>
+        <li>Comment la fréquence des départs explique le taux de pénétration ? (Fait par un membre du groupe)</li>
+        <li>La proportion des gares dans une région explique-t-elle le taux de pénétration ? (Fait par moi)</li>
+        <li>L'activité de la population (tranche de 15 à 64 ans) impacte-t-elle le taux de pénétration ? (Fait par un autre membre)</li>
+      </ul>
+      <p class="texte-projet">
+      La plus grosse difficulté était le temps alloué au projet (6h30).
+    </p>
+    </p>
+
+        <!-- Ajout des images d'illustrations-->
+        <div class="proj-container">
+          <figure class="proj-legends">
+            <img class="proj-img rounded-4" src="{{ url_for('static', filename='datavisualisation/Problématique.png.3.png') }}"
+             alt="Graphique à barre sur le taux de pénétration par région">
+            <figcaption>Taux de pénétration par région</figcaption>
+          </figure>
+          <figure class="proj-legends">
+            <img src="{{ url_for('static', filename='datavisualisation/L\'activité de la population (tranche de 15 à 64 ans ) impacte-t-elle le taux de pénétration .png.3.png') }}" 
+            class="proj-img rounded-4" alt="Boxplot des variables quantitatives">
+            <figcaption>Activtité de la population dans les deux gares</figcaption>
+          </figure>
+        </div>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+      Pour conclure, j'ai pu m'améliorer dans le travail d'équipe et dans la création de visualisation propre à l'aide de <strong>Tableau</strong>. 
+      En revanche, je dois poursuivre mes efforts dans la communication et la présentation orale de nos résultats.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='datavisualisation/La proportion des gares dans une région explique-t-elle le taux de pénétration .png.1.png') }}"
+       alt="régression linéaire de la variable 'neck'">
+      <figcaption>Proportion des gares</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='datavisualisation/Comment les départements d\'une région et la densité de la population impactent le taux de pénétration  .png.1.png') }}" 
+      class="proj-img rounded-4" alt="Tableau des corrélation de Pearson"
+      >
+      <figcaption>Densité de la population selon la région</figcaption>
+    </figure>
+
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='datavisualisation/Comment la fréquence des départs explique le taux de pénétration .png.1.png') }}" 
+      class="proj-img rounded-4" alt="Tableau des coefficients de détermination"
+      >
+      <figcaption>Fréquence des départs</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='datavisualisation/Datavisualisation.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

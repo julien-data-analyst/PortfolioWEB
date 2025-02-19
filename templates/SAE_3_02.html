@@ -1,0 +1,127 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 3.02 : Intégration de données dans un datawarehouse</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='airviro_logo.png') }}" 
+       width="20%"
+       height="20%"
+       alt="logo d'airviro">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        L'objectif de ce projet est de pouvoir créer un <strong>entrepôt de données</strong> opérationnel avec les différentes étapes de création. 
+        Ensuite, nous devions mener un cas d'analyse. Le sujet était sur la <strong>pollution au Royaume-Uni</strong>, 
+        plus précisément dans la ville de Sheffield, en utilisant les données du site Web <a target="_blank" href="https://www.airviro.com/airviro/">Aviro</a>. 
+        Les éléments attendus à la fin de ce projet étaient :
+        <ul class="texte-projet">
+            <li>Un rapport PDF sur les étapes de création de la base de données brutes à 
+                l'insertion de ces données tout en menant une étude de cas sur la pollution et la météo.</li>
+
+            <li>Trois scripts <strong>Python au format notebook</strong> permettant la création de la base, 
+                l'insertion des données en s'aidant principalement du <strong>langage SQL (MySQL) et l'analyse exploratoire</strong>.</li>
+        </ul>
+        <p class="texte-projet">
+        Nous étions un groupe de 4 et nous devions présenter nos résultats à l'oral pendant 10 minutes.
+        </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Dans le cadre de ce projet, nous avons d'abord réfléchi au modèle conceptuel de la base de données 
+        en regardant les données mises à disposition. Après la validation de ce modèle par le groupe, 
+        nous avons créé la base, inséré les données et fait une analyse entre 2012 et 2021 sur la pollution et la météo. 
+        Nous avons donc réparti le travail de la façon suivante :
+
+        <ul class="texte-projet">
+        <li> Je travaillais sur l'étape de la création, de la préparation (pollution) 
+            et de l'insertion des données, de l'analyse de l'évolution des phénomènes météorologiques et des polluants.</li>
+        <li>Le deuxième membre travaillait aussi sur ces différentes étapes (météo) des données, 
+            sur l'analyse des polluants et de leur corrélation avec les phénomènes météorologiques.</li>
+        <li>Le troisième membre vérifiait le bon fonctionnement de la base et s'occupait du rapport notamment 
+            de la conclusion et de l'introduction.</li>
+        <li>Le quatrième membre interférait dans le fonctionnement de la base de données et 
+            travaillait aussi sur le rapport en élaborant la partie sur l'entrepôt de données.</li>
+        </ul>
+    </p>
+
+    <!-- Ajout des images d'illustrations-->
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='integration_donnees/Modele_Con_Rel.png') }}"
+           alt="Modèle de la base de données relationnelles">
+          <figcaption>Modèle de la base de données relationnelles</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='integration_donnees/Extrait_types.png') }}" 
+          class="proj-img rounded-4" alt="Types de mesures météorologiques">
+          <figcaption>Types de mesures météorologiques</figcaption>
+        </figure>
+      </div>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+
+        Les difficultés de ce projet ont été nombreuses. La première était dans la réflexion de la création de 
+        l'entrepôt où nous n'arrivions pas à nous mettre d'accord. Cela nous a amenés à faire plusieurs réunions sur comment créer cette base, 
+        quelles vont être les relations tout en respectant la normalité. Une deuxième difficulté était survenue dans la préparation des données 
+        où nous devions voir ensemble à quoi devais ressembler la structure des données et comment l'exporter. 
+        Cela s'est résolu par plusieurs discussions pour mettre en place une structure de données commune. 
+        Ces deux fichiers sont nommés « Meteo.csv » et « Pollution.csv » qui contiennent respectivement les données météorologiques 
+        et de pollutions. 
+        Une dernière difficulté se remarquait dans l'analyse notamment dans le sujet d'étude pour analyser ces données. De plus, 
+        certaines mesures n'ont pas été prises pour certaines années. Par conséquent, nous devions faire attention à cette absence d'information.
+    </p>
+  </li>
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, j'ai pu améliorer mes compétences dans la <strong>création et l'insertion d'une base de données en respectant la normalité</strong>. 
+        J'ai pu développer des compétences dans la <strong>préparation et l'apurement des données</strong>. 
+        Cependant, je dois encore m'améliorer dans <strong>l'écriture d'un rapport et dans la présentation orale d'un projet</strong>.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='integration_donnees/Heatmap.png') }}"
+       alt="Heatmap sur les polluants de 2012 à 2021">
+      <figcaption>Heatmap sur les polluants de 2012 à 2021</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='integration_donnees/Moyenne_tem.png') }}" 
+      class="proj-img rounded-4" alt="Moyenne de température de 2012 à 2021"
+      >
+      <figcaption>Courbe moyenne de température</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='integration_donnees/Integration_donnees.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

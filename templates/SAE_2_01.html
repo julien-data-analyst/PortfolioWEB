@@ -1,0 +1,119 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 2.01 : Conception et implémentation d'une base de données</h1>
+       <img class="rounded-pill img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='Conception_implementation/Logo_Proxi_-_2012.svg.png') }}" 
+       width="20%"
+       height="20%"
+       alt="proxi_logo">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+        Ce projet a pour but de concevoir plusieurs bases de données pour y intégrer les éléments qui nous ont été fournis. 
+        Pour ce faire, dans le contexte fictif où le proxi des 322 habitants fait face à une coupure internet, 
+        nous devons mettre en place une base de données (<strong>SQLite</strong>), répondant aux besoins du client, 
+        qui souhaite avoir un outil en ligne de commande dans le but que les clients puissent gérer leur stock, 
+        au format UML. Il y aura une partie interface graphique à compléter afin que les utilisateurs puissent encaisser les clients. 
+        Un ticket devra être généré au format TXT et sera sauvegardé dans une base de données afin de faire des analyses. 
+        Cette partie doit pouvoir analyser les ventes effectuées et d'en tirer une ou plusieurs informations.
+        On devait rendre dans un dossier ZIP :
+        <ul class="texte-projet">
+            <li>L'architecture contenant toutes les parties de programmation ci-dessus en <strong>Python</strong> et en <strong>R</strong></li>
+            <li>Le rapport PDF écrit en <strong>LATEX</strong></li>
+        </ul>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Nous étions un groupe de 4 pour ce projet. D'abord, nous avons vu ensemble la création de notre base de données en faisant une UML. 
+        Ensuite, les 3 autres personnes se sont occupées de l'insertion des données tandis que moi 
+        je m'occupais de la création de la base de données en la modifiant au fur et à mesure, 
+        car nous avons eu de nouvelles idées afin d'améliorer la conception. 
+        Pour la gestion de l'inventaire, nous avons réfléchi ensemble à comment le gérer et 
+        l'appliquer en ayant réfléchi aux différentes commandes. Il fallait, également, 
+        le rendre le plus simple possible à utiliser. Dans cette perspective, 
+        j'ai pris en charge la création des commandes tandis que les autres s'occupaient de l'insertion des quantités de produits 
+        dans le rayon et dans le stock. L'interface graphique a été fait en pratique par moi en ayant demandé 
+        l'avis de chacun pour chaque étape de l'interface afin de discuter de nos différentes idées. 
+        Pour finir, le rapport a été fait en grande partie par les trois autres personnes tandis que je vérifiais si tout marchait.
+    </p>
+
+    <!-- Ajout des images d'illustrations-->
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='Conception_implementation/UML Réalisé.png') }}"
+           alt="UML de la base de données">
+          <figcaption>UML de la base de données relationnelles</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='Conception_implementation/interface graphique.png') }}" 
+          class="proj-img rounded-4" alt="Inteface graphique">
+          <figcaption>Interface basique développée sous Python</figcaption>
+        </figure>
+      </div>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Le premier problème que nous avons eu était les fichiers de données à insérer qui étaient dans différents formats avec des informations différentes. 
+        Pour ce faire, nous avons fait deux grandes catégories : « l'alimentaire » (fruits, légumes, surgelés, …) et « divers » 
+        avec pour chacune des informations que nous avons pu réunir. La création n'était pas une difficulté. 
+        Les commandes étaient assez compliquées, car il fallait prêter attention au fait que cela se modifie et qu'il n'est aucun problème. 
+        Pour ce faire, nous avons fait plusieurs tests pour que le programme réponde de façon appropriée à la situation avec des fichiers logs 
+        qui permettent de résumer les actions faites par celui-ci. 
+        L'interface graphique était compliquée, car nouvelle. Par conséquent, cela nous a pris du temps pour comprendre son fonctionnement.
+    </p>
+  </li>
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, ce projet m'a permis d'apprendre un peu plus sur la création d''une interface graphique, 
+        mais aussi dans la gestion d'une base de données tels que la création des commandes pour ainsi y modifier l'inventaire. 
+        Je dois m'améliorer dans l'interface graphique, 
+        mais aussi dans la création de bases de données pour que nous puissions arrêter de modifier la structure de la base de données.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='Conception_implementation/Distribution du prix unitaire des produits.png') }}"
+       alt="graphique distribution du prix unitaire des produits"
+       height="70%" width="90%">
+      <figcaption>Distribution du prix unitaire des produits</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='Conception_implementation/Top 5 des produits les plus vendus.png') }}" 
+      class="proj-img rounded-4" alt="graphique top 5 des produits les plus vendus"
+      >
+      <figcaption>Top 5 des produits les plus vendus</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='Conception_implementation/SAE_Conception_Groupe_07.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

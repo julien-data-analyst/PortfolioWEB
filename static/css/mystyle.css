@@ -1,0 +1,133 @@
+/* Pour le background */
+.bg-data {
+    background-color: rgb(8, 69, 98);
+    color: rgb(56, 248, 250);
+}
+
+.bg-accueil{
+    background-color: rgb(225, 255, 254);
+}
+
+.bg-white{
+    background-color: white;
+}
+/* Pour le conteneur des logos langages/outils (version 1) */
+
+
+/* Version 2 du conteneur des logos */
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Largeur fixe */
+    height: 400px; /* Ajustez selon vos besoins */
+    position: relative;
+}
+
+.carousel-items {
+    display: flex;
+    width: 100%; /* S'adapte à la largeur du conteneur */
+    height: 100%; /* S'adapte à la hauteur du conteneur */
+}
+
+.carousel-item_2 {
+    position: absolute; /* Superpose tous les items */
+    width: 100%; /* Les items occupent toute la largeur */
+    opacity: 0; /* Commence invisible */
+    transform: translateX(100%); /* Commence hors du cadre à droite */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animation fluide */
+    visibility: hidden; /* Rend l'item inaccessible */
+}
+
+.carousel-item_2.active {
+    opacity: 1; /* Rendu visible */
+    transform: translateX(0); /* Position au centre */
+    visibility: visible; /* Rend l'item accessible */
+}
+
+/*.carousel-container {
+    border: 2px solid red;
+}
+.carousel-items {
+    border: 2px solid blue;
+}*/
+
+#prev-button {
+    left: 10px; /* Place le bouton de gauche */
+    position: absolute; /* Positionne les boutons au-dessus du contenu */
+    z-index: 10; /* Assure que les boutons sont au-dessus des items */
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%); /* Ajuste pour centrer précisément */
+}
+
+#next-button {
+    right: 10px; /* Place le bouton de droite */
+    position: absolute; /* Positionne les boutons au-dessus du contenu */
+    z-index: 10; /* Assure que les boutons sont au-dessus des items */
+    top: 50%; /* Centre verticalement */
+    transform: translateY(-50%); /* Ajuste pour centrer précisément */
+}
+
+/* Mise en forme du texte pour les projets (Présentation, ..., Conlcusion) */
+.texte-projet {
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-bottom: 1%;
+}
+
+/* Mise en forme des photos des projets */
+/* Conteneur pour les photos */
+.proj-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    gap: 20px; /* Espace entre les images */
+    margin-top: 20px;
+  }
+
+/* Chaque figure contient l'image et sa légende */
+.proj-legends{
+    text-align: center; /* Centre le texte de la légende */
+    margin: 0;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 1%;
+  }
+
+/* Style optionnel pour les images */
+.proj-img{
+    max-width: 100%; /* Assure que l'image ne déborde pas */
+    height: auto;
+    display: block;
+  }
+
+/* Pour les boutons de téléchargements */
+.download-btn {
+    display: inline-block;
+    padding: 20px 40px;   /* Augmentation de l'espace intérieur */
+    font-size: 20px;      /* Texte plus grand */
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+.download-btn:hover {
+    background-color: #0056b3;
+  }
+
+.center {
+    text-align: center;
+    margin-top: 50px; /* Optionnel : pour espacer du haut */
+    padding-bottom: 2%;
+  }
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center;     /* Centre verticalement */
+    height: 100%;
+  }

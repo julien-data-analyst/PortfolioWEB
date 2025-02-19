@@ -1,0 +1,129 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 2.06 : Analyse de données, reporting et datavisualisation</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='close-up-electric-car-france.jpg') }}" 
+       width="10%"
+       height="10%"
+       alt="proxi_logo">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+        L'objectif de ce projet est de pouvoir nettoyer, préparer puis analyser une base de données grâce aux différentes notions de la statistique.
+        Pour ce projet, nous allons étudier l'ensemble des transactions de paiement concernant les horodateurs dans la ville de Paris 
+        pour l'année 2014. Il représente plus de 24 millions d'enregistrements mis à disposition par la ville elle-même sur son site <a target="_blank" href="https://opendata.paris.fr/explore/dataset/horodateurs-mobiliers/export/?disjunctive.arrondt&disjunctive.zoneres&disjunctive.tarif&disjunctive.regime&disjunctive.paiement&disjunctive.acces_pmr&dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJjb2x1bW4iLCJmdW5jIjoiQ09VTlQiLCJ5QXhpcyI6ImFycm9uZHQiLCJzY2llbnRpZmljRGlzcGxheSI6dHJ1ZSwiY29sb3IiOiJyYW5nZS1jdXN0b20ifV0sInhBeGlzIjoiYXJyb25kdCIsIm1heHBvaW50cyI6bnVsbCwic29ydCI6IiIsInNlcmllc0JyZWFrZG93biI6InJlZ2ltZSIsInNlcmllc0JyZWFrZG93blRpbWVzY2FsZSI6IiIsInN0YWNrZWQiOiJub3JtYWwiLCJjb25maWciOnsiZGF0YXNldCI6Imhvcm9kYXRldXJzLW1vYmlsaWVycyIsIm9wdGlvbnMiOnsiZGlzanVuY3RpdmUuYXJyb25kdCI6dHJ1ZSwiZGlzanVuY3RpdmUuem9uZXJlcyI6dHJ1ZSwiZGlzanVuY3RpdmUudGFyaWYiOnRydWUsImRpc2p1bmN0aXZlLnJlZ2ltZSI6dHJ1ZSwiZGlzanVuY3RpdmUucGFpZW1lbnQiOnRydWUsImRpc2p1bmN0aXZlLmFjY2VzX3BtciI6dHJ1ZX19fV0sInRpbWVzY2FsZSI6IiIsImRpc3BsYXlMZWdlbmQiOnRydWUsImFsaWduTW9udGgiOnRydWV9">
+            Open Data</a>. 
+        Pour cette analyse, nous allons utiliser le logiciel <strong>RStudio</strong> du langage <strong>R</strong>. Les documents à rendre étaient :
+        <ul class="texte-projet">
+            <li>Un rapport des résultats obtenus en PDF</li>
+            <li>Deux scripts du langage <strong>R</strong>, dont l'un est sur la préparation des données, et l'autre sur l'analyse</li>
+        </ul>
+        <p class="texte-projet">
+        Il y avait aussi un oral de soutenance au cours duquel nous présenterions nos résultats à l'aide du langage <strong>Marp</strong>. Nous étions un groupe de groupe de 4 pour ce projet.
+        </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Pour la partie R, moi et un membre nous occupions du nettoyage des données en nous aidant entre nous. Ensuite, 
+        tout le groupe s'occupait de l'analyse des données par la visualisation des graphiques et le calcul des coefficients. 
+        Pour la rédaction du rapport, nous nous sommes réparti de la manière suivante :
+        <ul class="texte-projet">
+        <li>	J'ai fait l'introduction, la conclusion et la première section du rapport</li>
+        <li>	Deux membres se sont occupés de la deuxième section du rapport avec l'annexe</li>
+    </ul>
+    <p class="texte-projet">
+        Le quatrième membre s'est occupé majoritairement du diaporama qui a été fait sous Marp.
+    </p>    
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Les problèmes que nous avons eus sont, d'abord, sur le nettoyage des données, 
+        car le fichier de données était volumineux ce qui occasionnait des latences dues à la durée assez longue du fichier. 
+        Pour régler ce problème, nous avons fait une copie d'une partie des données pour faire ainsi des tests jusqu'à 
+        trouver la bonne méthode pour traiter les données. On a eu aussi un problème dans la partie analyse exploratoire 
+        où il fallait trouver les bonnes méthodes pour calculer les indicateurs notamment nécessaires 
+        à l'analyse bivarié sans avoir accès à d'autre librairie que celle indiquée par le professeur. 
+        Une difficulté que nous avons eue était aussi sur la présentation des graphiques 
+        qu'il fallait améliorer pour la plupart, car ils étaient illisibles. 
+        Il fallait faire en sorte de bien mettre la légende là où il le faut. La rédaction du rapport n'était pas d'une grande difficulté, 
+        mais il fallait bien retranscrire la ou les informations principales de ces visualisations.
+    </p>
+
+        <!-- Ajout des images d'illustrations-->
+        <div class="proj-container">
+          <figure class="proj-legends">
+            <img class="proj-img rounded-4" src="{{ url_for('static', filename='analyse_reporting_datavisualisation/Montant payé selon l\'usager.png') }}"
+             alt="Histogramme du montant payé selon l'usager">
+            <figcaption>Histogrammes du montant payé selon l'usager</figcaption>
+          </figure>
+          <figure class="proj-legends">
+            <img src="{{ url_for('static', filename='analyse_reporting_datavisualisation/Montant total en million rapporté selon le type d\'usager.png') }}" 
+            class="proj-img rounded-4" alt="Graphique à barre sur les montant total en million rapporté">
+            <figcaption>Montant total en million rapporté selon le type d'usager</figcaption>
+          </figure>
+        </div>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, je me suis amélioré dans la maîtrise du langage R notamment dans la création des graphiques. 
+        Je me suis amélioré dans la rédaction du rapport en apportant une réponse claire et nette sur les différentes visualisations. 
+        Cependant, je dois être plus à l'aise sur le nettoyage des données pour perdre moins de temps sur cette partie. 
+        Je dois aussi m'améliorer dans l'interaction avec le groupe afin d'être plus efficace dans notre travail.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='analyse_reporting_datavisualisation/Distribution du montant payé pour le stationnement.png') }}"
+       alt="régression linéaire de la variable 'neck'">
+      <figcaption>Distribution du montant payé pour le stationnement</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='analyse_reporting_datavisualisation/Type de paiement selon l\'usager.png') }}" 
+      class="proj-img rounded-4" alt="Tableau des corrélation de Pearson"
+      >
+      <figcaption>Type de paiement selon l'usager</figcaption>
+    </figure>
+
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='analyse_reporting_datavisualisation/Montant payé selon l\'arrondissement.png') }}" 
+      class="proj-img rounded-4" alt="Tableau des coefficients de détermination"
+      >
+      <figcaption>Montant payé selon l'arrondissement</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='analyse_reporting_datavisualisation/Groupe05 - SAE 2-06.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

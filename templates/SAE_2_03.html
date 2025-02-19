@@ -1,0 +1,126 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 2.03 : Régression sur données réelles</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='FFMI maigre.png') }}" 
+       width="20%"
+       height="20%"
+       alt="proxi_logo">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+        L'objectif de ce projet consistait, à partir d'une base de données concernant 252 patients de sexe masculin, 
+        disponibles sur le site de <a target="_blank" href="https://www.kaggle.com/datasets/fedesoriano/body-fat-prediction-dataset">Kaggle</a>, 
+        de trouver la variable morphologique la plus pertinente pour expliquer 
+        les variations de l'indice de masse maigre à l'aide du logiciel <strong>RStudio</strong> Il y avait à rendre :
+        <ul class="texte-projet">
+            <li>Un rapport d'étude en PDF</li>
+            <li>Un script <strong>R</strong> commenté</li>
+        </ul>
+        <p class="texte-projet">
+        Afin de présenter les résultats obtenus, nous avions une soutenance orale de 10 minutes.
+        </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Dans notre groupe, nous avons fait le code R qui se portait sur :
+        <ul class="texte-projet">
+        <li>	L'analyse univariée de chaque variable quantitative </li>
+    	<li>    Trouver la variable morphologique la plus pertinente</li>
+        <li>    La création d'un modèle de régression de la variable la plus influente avec l'indice de masse maigre</li>
+        </ul>
+        <p class="texte-projet">
+        Pour le rapport, nous avons procédé de cette façon :
+        <ul class="texte-projet">
+        <li> Je me suis occupé de l'introduction, de l'analyse de la distribution des données et de la détection de valeurs problématiques, 
+            de l'analyse de l'association entre l'indice de masse maigre et des variables morphologiques et de la conclusion </li>
+        <li>Un membre du groupe s'est occupé de l'analyse des distributions morphologiques 
+            et de l'analyse des nuages de dispersion entre variables morphologiques et l'indice de masse maigre </li>
+        <li>Un autre membre s'est occupé de l'annexe, la table des figures, la table des matières et il a aidé à l'analyse des distributions morphologiques et à l’analyse de l’association</li>
+    </ul>
+    </p>
+    </p>
+
+    <!-- Ajout des images d'illustrations-->
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='regression_donnees_relles/Distribution histogramme.png') }}"
+           alt="Distribution des variables quantitatives">
+          <figcaption>Distribution des variables quantitatives avec les histogrammes</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='regression_donnees_relles/Distributions des variables d\'intérêt 2.png') }}" 
+          class="proj-img rounded-4" alt="Boxplot des variables quantitatives">
+          <figcaption>Distribution des variables quantitatives par boxplot</figcaption>
+        </figure>
+      </div>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Pour le code R, nous avons suivi les différentes procédures avec la présentation, le chargement des librairies, 
+        le chargement des données, la préparation des données, l'analyse exploratoire, la modélisation et, enfin, 
+        la visualisation et l'interprétation du meilleur modèle. 
+        Pour chacune de ces procédures, il fallait utiliser différentes méthodes pour avoir les résultats qu'on souhaitait. 
+        La difficulté que nous avons eu était la compréhension de chacun de nos programmes, 
+        car chacun avait sa façon coder et de commenter, ce qui rendait la compréhension de certains programmes difficile. 
+        Ensuite, pour le rapport, nous avons rencontré quelques difficultés sur la mise en forme du rapport avec l'apport analytique concret 
+        qu'on devait faire dans le but qu'il soit compris par tous en évitant d'aller trop loin dans les notions statistiques.
+    </p>
+  </li>
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, j'ai pu apprendre à modéliser une régression linéaire de deux variables quantitatives. 
+        J'ai pu m'améliorer dans la création du code R. Cependant, je dois être beaucoup plus « propre » sur le code R 
+        afin de rendre la compréhension plus facile pour la lecture du code par une tierce personne. Je dois apporter dans le rapport, 
+        une analyse plus simple aux yeux du public, mais aussi précise et cohérente avec les notions statistiques.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='regression_donnees_relles/regression_finale.png') }}"
+       alt="régression linéaire de la variable 'neck'">
+      <figcaption>Régression linéaire de la variable 'neck'</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='regression_donnees_relles/Corrélation linéaire.png') }}" 
+      class="proj-img rounded-4" alt="Tableau des corrélation de Pearson"
+      >
+      <img src="{{ url_for('static', filename='regression_donnees_relles/coefficient de détermination.png') }}" 
+      class="proj-img rounded-4" alt="Tableau des coefficients de détermination"
+      >
+      <figcaption>Tableaux des indicateurs calculés</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='regression_donnees_relles/Regression_donnees_reelles.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

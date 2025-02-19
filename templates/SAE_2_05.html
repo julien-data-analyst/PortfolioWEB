@@ -1,0 +1,100 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 2.05 : Construction et présentation d'indicateurs de performance</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='logo_milliardaire.png') }}" 
+       width="20%"
+       height="20%"
+       alt="logo milliardaire">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        L'objectif de ce projet est de pouvoir créer un tableau de bord, 
+        à l'aide du logiciel Tableau, sur le thème des milliardaires dans le monde avec un axe d'analyse qui devra être mené. 
+        Les documents à rendre étaient :
+        
+        <ul class="texte-projet">
+            <li>Le fichier de données si modifié au format Excel</li>
+            <li>Le fichier de tableau de bord avec le logiciel <strong>Tableau</strong></li>
+            <li>Un document PowerPoint contenant les feuilles du classeur</li>
+        </ul>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Pour ce projet, nous avons, d'abord, fait le nettoyage de données par l'utilisation d'Excel. 
+        Ensuite, nous avons réfléchi à la problématique sur le thème et nous avons choisi <strong>la répartition des milliardaires 
+        dans le monde entre les hommes et les femmes</strong>. 
+        Après la décision de l'axe d'analyse, nous avons créé différents visuels, puis le tableau de bord et pour finir le storytelling. 
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        La première difficulté que nous avons eue était dans le nettoyage des données. 
+        En effet, certaines d'entre elles n'étaient pas bien interprétées par le logiciel Tableau et 
+        on avait donc besoin d'utiliser Excel pour modifier les types de données pour qu'elles soient bien interprétées et utilisables 
+        dans la partie analyse. La deuxième difficulté était les visualisations à choisir, car nous avions plein de possibilités 
+        pouvant être sur un niveau géographique précis (pays, continent, …). Pour régler cette difficulté, nous avons, 
+        d'abord, choisi la problématique : <strong>« Que représente la richesse des hommes et des femmes milliardaires dans le monde ? »</strong>
+        Nous avons pris la décision de rester au niveau du monde pour cet axe. La troisième difficulté était le choix des visualisations, 
+        car comme la précédente, il y avait plein de possibilités, mais nous avons décidé de rester simples pour que le visuel 
+        apporte une réponse claire à la problématique. La dernière difficulté qu'on a eue était dans la partie du storytelling 
+        où il fallait montrer les informations capitales de notre tableau de bord, car il y avait beaucoup d'informations, 
+        mais il fallait choisir celles qui apportaient, selon nous, le plus de pertinence. Nous avons décidé donc de faire une analyse, 
+        tout d'abord, du monde avec une partie homme et une partie femme pour terminer 
+        sur l'analyse par continent de la répartition des milliardaires hommes et femmes.
+    </p>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, j'ai appris à concevoir un dashboard réunissant toutes les visualisations permettant de répondre à la problématique. 
+        J'ai pu m'améliorer dans la conception de visuels pour qu'ils soient intéressants et explicites. 
+        J'ai appris à faire du storytelling en montrant différentes informations. 
+        Cependant, je dois m'améliorer dans cette conception des visuels pour les rendre beaucoup plus attrayants. 
+        Je dois être plus concis pour le storytelling, 
+        car je mets beaucoup trop d'informations, ce qui nuit à la communication de l'information principale.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+
+<div class="video-container">
+    <video controls width="80%">
+
+        <source src="{{ url_for('static', filename='const_pres_ind_perf/Richesse.mp4') }}" 
+        type="video/mp4" />
+
+    </video>
+</div>
+  <div class="center">
+    <a href="{{ url_for('static', filename='const_pres_ind_perf/construction_presentation_indicateurs_performances.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

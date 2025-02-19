@@ -1,0 +1,105 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 4.VCOD.01 : Développement d'un composant d'une solution décisionnelle</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='Sncf-logo.svg.png') }}" 
+       width="20%"
+       height="20%"
+       alt="logo SNCF">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        Dans le cadre de ce projet, il nous a été demandé de développer un <strong>tableau de bord interactif</strong> pour 
+        <strong>l'analyse des retards de trains en France de la SNCF</strong>. Il fallait rendre à la fin de ce projet un dossier zip contenant :
+        <ul class="texte-projet">
+        <li> Les fichiers <strong>PHP, JS (JavaScript) et CSS</strong> contenant le code permettant de faire le tableau interactif.</li>
+        <li>Un rapport au format PDF expliquant les <strong>fonctionnalités du tableau interactif et qui a fait quoi</strong>.</li>
+        </ul>
+
+        <p class="texte-projet">
+        Nous étions deux pour ce projet. Les données utilisées dans ce projet sont contenues dans un fichier au format CSV contenant 
+        des informations relatives aux retards de trains. 
+        Elles ont été insérées dans une base de données avec un script PHP utilisé dans ce projet. 
+        </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        Pour l'organisation du projet, nous avons décidé de répartir de la façon suivante :
+    <ul class="texte-projet">
+    <li>Le deuxième membre du groupe s'occupait de la visualisation des retards par année, 
+    le top 5 des gares les plus affectées par les retards et l'analyse du nombre de retards pour une année sélectionnée.</li>
+    <li>Je m'occupais de la fonctionnalité de la sélection de l'année par l'utilisateur avec l'analyse des causes de retards pour l'année sélectionnée, 
+        la répartition des retards par seuil pour l'année sélectionnée et l'affichage des commentaires sur les retards.</li>
+    </ul>
+    <p class="texte-projet">
+    En ce qui concerne l'élaboration du rapport, nous avons partagé le travail en différentes parties. 
+    D'abord, l'introduction a été faite par ma camarade et l'explication du modèle de la base de données par moi-même. 
+    Nous avons tous deux rédigé les parties réalisation du tableau de bord et la conclusion où nous devions expliquer 
+    les fonctionnalités que nous avons développées et les pistes d'amélioration.
+    </p>
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        La démarche de la création des différentes visualisations était souvent la même. 
+        Cela se faisait d'abord par une <strong>étape de sélection des données nécessaires dans la base de données (via PHP et SQL)</strong>. 
+        On passait ensuite à une <strong>étape de traitement</strong> où on traitait les données récupérées dans une structure simple 
+        d'utilisation dans les autres langages (via PHP). C'était l'étape la plus difficile, 
+        car il nécessitait une réflexion de ce qu'on voulait avoir pour rendre la <strong>dernière étape la plus simple possible</strong>. 
+        L'avant-dernière étape était l'envoi de données au script JS. Ces scripts JS ont pu donner lieu à la dernière étape 
+        qui était <strong>la visualisation des données</strong> par des graphiques en utilisant la librairie <strong>ChartJS</strong>. 
+        La seule visualisation qui n'avait pas cette démarche était <strong>l'affichage des commentaires sur les retards</strong>
+        en utilisant cette fois-ci les options HTML pour faire une structure propre au regard de l'utilisateur. 
+    </p>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, j'ai pu développer une <strong>grande maîtrise du langage PHP et du JS (ChartJS).</strong>
+        J'ai pu m'améliorer dans <strong>l'interface web entre l'utilisateur et le serveur</strong>. Cependant, 
+        je dois encore m'améliorer dans la maîtrise du langage JS et dans <strong>la structure d'une page web pour rendre une interface encore plus lisible</strong>.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+
+<div class="video-container">
+    <video controls width="80%">
+
+        <source src="{{ url_for('static', filename='developpement_comp_dec/Presentation_interface - Réalisée avec Clipchamp_1713895951892.mp4') }}" 
+        type="video/mp4" />
+
+    </video>
+</div>
+  <div class="center">
+    <a href="{{ url_for('static', filename='developpement_comp_dec/comp_dev_sol.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

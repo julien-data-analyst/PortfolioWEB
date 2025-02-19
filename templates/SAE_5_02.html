@@ -1,0 +1,111 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 5.02 : Migration de données vers ou depuis un environnement NoSQL</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='mongodb.png') }}" 
+       width="20%"
+       height="20%"
+       alt="logo MongoDB">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        Un ensemble de données concernant Olist, le plus grand site e-commerce brésilien, a été mise à disposition sur <a target="_blank"
+        href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">Kaggle</a>. 
+        Elle permettait de travailler sur <strong>les commandes, les avis des clients, les paiements, les produits et les vendeurs</strong>. 
+        L'objectif de ce projet était de créer une base de données via <strong>MongoDB</strong> à partir de cet ensemble de données (à l'exception de la géolocalisation).
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        <ul class="texte-projet">
+            <li><strong>Modalité</strong> : travail individuel</li>
+            <li><strong>Ressources</strong> : cours environnement NoSQL (Neo4j, MongoDB, Redis)</li>
+            <li><strong>Outil</strong> : <strong>Python (Notebook, pymongo), MongoDB Compact</strong></li>
+            <li><strong>Livrables</strong> : jupyter-notebook, rapport (latex)</li>
+        </ul>
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Le projet a débuté par une phase d'importation et de préparation des données sous Python. 
+        Cette étape était essentielle pour analyser la structure de chaque jeu de données et les ajuster si nécessaire. 
+        Cependant, elle s'est révélée complexe, car il fallait comprendre en détail l'organisation de chaque dataset.
+        Ensuite, j'ai travaillé sur l'intégration de ces données. Cela se faisait par la librairie pymongo qui nous a permis 
+        d'effectuer différentes requêtes. Chaque fichier importé sous Python était ensuite stocké dans une collection de la base. 
+        Enfin, j'ai exploité la puissance de MongoDB pour analyser plusieurs axes, notamment :
+
+        <ul class="texte-projet">
+        <li>Le prix moyen des articles par catégorie</li>
+        <li>Les vendeurs les mieux notés</li>
+        <li>Les 7 États les plus prolifiques</li>
+        <li>Les 7 États avec le délai de livraison le plus court</li>
+        <li>La catégorie de produit la mieux notée</li>
+        </ul>
+        <p class="texte-projet">
+        Ces analyses nécessitaient une bonne compréhension du schéma de la base de données, 
+        afin d'identifier les colonnes pertinentes et les relations entre les différentes collections. 
+        Pour optimiser les performances des requêtes, j'ai mis en place des index sous MongoDB, réduisant ainsi 
+        le temps d'exécution de certaines requêtes de 1 heure à seulement 10 secondes.
+        </p>
+    </p>
+
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='env_nosql/etats_prolifiques.png') }}"
+           alt="Graphique à barre sur les 7 états les plus prolifiques">
+          <figcaption>Les 7 États les plus prolifiques</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='env_nosql/livraison_plus_court.png') }}" 
+          class="proj-img rounded-4" alt="Graphique à barre sur les 7 états avec le délai de livraison le plus court">
+          <figcaption>Les 7 États avec le délai de livraison le plus court</figcaption>
+        </figure>
+      </div>
+
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, ce projet m'a permis de découvrir le SGBD MongoDB et ses avantages. J'ai appris à faire comme sur SQL, 
+        la création de requêtes pour de l'analyse exploratoire. 
+        Cependant, il faudra que je m'améliore au niveau des axes d'analyses et des visuels à utiliser.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='env_nosql/MongoDB Compass.png') }}"
+       alt="Bases de données sur le logiciel MongoDB Compass" width="80%">
+      <figcaption>Observation du logiciel MongoDB Compact</figcaption>
+    </figure>
+
+  <div class="center">
+    <a target="_blank" href="{{ url_for('static', filename='env_nosql/Projet_MongoDB.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

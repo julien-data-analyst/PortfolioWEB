@@ -1,0 +1,118 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 5.03 : Mise en œuvre d'un processus de Datamining</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='logo_olist.png') }}" 
+       width="20%"
+       height="20%"
+       alt="logo Olist">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+
+        Pour cette SAE, nous devions travailler sur la création d'un modèle de <strong>Deep Learning</strong> pour la <strong>prédiction de la satisfaction 
+        du client selon son commentaire</strong>. Pour ce faire, nous avions utilisé un jeu de données <a target="_blank"
+        href="https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce">Olist</a> sur une enquête de satisfactions des utilisateurs 
+        avec présence de commentaire et d'une note. 
+        Le travail était réalisé sous <strong>Python avec l'utilisation des librairies Scikit-Learn et de Keras</strong>. 
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+        <ul class="texte-projet">
+            <li><strong>Modalité</strong> : travail individuel</li>
+            <li><strong>Ressources</strong> : cours de Data Mining sur l'apprentissage supervisée</li>
+            <li><strong>Outil</strong> : <strong>Python (Keras, Scikit-Learn)</strong></li>
+            <li><strong>Livrables</strong> : jupyter-notebook, rapport (latex)</li>
+        </ul>
+    </p>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+
+        Tout d'abord, l'importation des données a été réalisée à l'aide de <strong>MongoDB</strong> (<a href="{{ url_for('projet_502') }}">SAÉ précédent</a>). 
+        J'ai tiré profit de ma base de données pour n'extraire que les informations où on observe la présence 
+        d'au moins une note de satisfaction et d'un commentaire. En faisant ça, je me suis retrouvé avec un jeu de données de 40 977 lignes. 
+        La prochaine étape était la préparation des données. Cette étape permettait de supprimer les doublons et de discrétiser 
+        la note de satisfaction :
+        <ul class="texte-projet">
+            <li><strong>La note de satisfaction inférieure ou égale à 1,5</strong> : on considère que le client est mécontent</li>
+            <li><strong>La note de satisfaction entre 1,5 et 2.5</strong> : on considère que le client est insatisfait</li>
+            <li><strong>La note de satisfaction entre 2,5 et 3,5</strong> : on considère que le client est satisfait</li>
+            <li><strong>La note de satisfaction strictement supérieure 3,5</strong> : on considère que le client est très satisfait</li>
+        </ul>
+        <p class="texte-projet">
+        En faisant cela, <strong>60% de notre jeu de données sont des clients très satisfait et plus de 20% pour les clients mécontents</strong>. 
+        Cela montre une proportion très disparate entre les différentes classes. Pour terminer sur l'étape de préparation, 
+        nous avons fait un traitement de langage naturel sur les commentaires (NLP) pour pourvoir créer notre modèle. 
+        La création de ce modèle avec les réseaux de neurones prenait beaucoup de temps avec des résultats très 
+        peu satisfaisant montrant la difficulté de ressortir un bon modèle. De plus, le texte était en portugais et 
+        nécessitait un traitement plus complexe. 
+        Le modèle de réseaux de neurones ressortait au final un score de 78% sur mon échantillon de test. 
+        Des graphiques telles que la matrice de confusion ou encore la courbe ROC permettaient 
+        d'observer le comportement du modèle et sans surprise, le modèle arrivait très bien à prédire les clients très satisfaits et mécontent 
+        mais pas les deux autres classes.
+        </p>
+    </p>
+
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='data_mining/distrib_target.png') }}"
+           alt="Distribution de la satisfaction du client">
+          <figcaption>Distribution de la satisfaction du client</figcaption>
+        </figure>
+    </div>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure sur ce projet, j'ai appris énormément dans le <strong>traitement textuel comme le NLP</strong>. 
+        J'ai pu apprendre les bases de la <strong>création d'un modèle de réseaux de neurones (Deep Learning)</strong> 
+        et faire attention à ne pas tomber dans le piège du <strong>surapprentissage du modèle</strong>.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='data_mining/courbe_roc.png') }}"
+       alt="Courbe ROC du modèle par classe" height="800" width="800">
+      <figcaption>Courbe ROC du modèle par modalité</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='data_mining/matrice_confusion.png') }}" 
+      class="proj-img rounded-4" alt="Matrice de confusion">
+      <figcaption>Matrice de confusion du modèle</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a target="_blank" href="{{ url_for('static', filename='data_mining/Projet_DataMining.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

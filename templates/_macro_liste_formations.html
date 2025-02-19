@@ -1,0 +1,22 @@
+{% macro formation(nom_formation, lieu_formation, annee_formation, 
+    description_formation, image_formation, nom_image_formation, height, width, site, outils) %}
+
+    <div class="row col-lg-7 justify-content-center align-items-center">
+    <!-- Partie en-tête -->
+    <div class="text-center justify-content-center align-items-center">
+    <a href="{{ site }}" target="_blank" rel="noopener noreferrer"><img class="bg-accueil" height="{{ height }}" width="{{ width }}" 
+    alt="{{ nom_image_formation }}" src="{{ url_for('static', filename=image_formation) }}"/></a>
+    <h4 class="text-danger text-opacity-75">{{ nom_formation }}</h4>
+    </div>
+    <!-- Partie informations -->
+<ul class="text-center list-unstyled justify-content-center align-items-center">
+    <li class="h5">{{ lieu_formation }}</li>
+    <li class="fs-5"><i>{{ annee_formation }}</i></li>
+    {% if outils != "" %}
+    <li class="fs-5 fw-semibold ">Langages/Logiciels utilisés : <p> {{ outils }}</p></li>
+    {% endif %}
+    <li class="fs-6"><p>{{ description_formation }}</p></li>
+</ul>
+</li>
+</div>
+{% endmacro %}

@@ -1,0 +1,123 @@
+{% extends "_base_projet.html" %}
+
+
+
+{% block content %}
+
+   <!-- En-tête de la page (Titre du projet) -->
+   <header class="masthead bg-primary text-white text-center" id="page-top">
+       <h1>SAÉ 3.03 : Description et prévision de données temporelles</h1>
+       <img class="rounded-4 img-fluid img-thumbnail"  
+       src="{{ url_for('static', filename='normandie_region.jpg') }}" 
+       width="20%"
+       height="20%"
+       alt="région normandie">
+   </header>
+   <br />
+
+<!-- Partie texte du projet -->
+<ul class="list-unstyled">
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">A. Présentation du projet </h2>
+    <p class="texte-projet">
+        L'objectif de ce projet est d'apprendre à mener une <strong>analyse chronique composée en deux parties</strong>. 
+        La première partie concerne une <strong>analyse exploratoire temporelle</strong> puis, en deuxième partie, 
+        <strong>une modélisation de la chronique avec les prévisions</strong>. 
+        Nous devions faire cette analyse avec <strong>les nuitées, dans l'hôtellerie, en Normandie, entre janvier 2011 et septembre 2023</strong>. 
+        Ces données sont disponibles sur le site de l'<a target="_blank" href="https://www.insee.fr/fr/statistiques/serie/010598624">INSEE</a>. 
+        À la fin de ce projet, on devait rendre, dans un dossier zip, les fichiers suivants :
+        <ul class="texte-projet">
+            <li>Un script en <strong>R-Markdown</strong> qui permet la <strong>création automatisée du rapport</strong>.</li>
+            <li>Le rapport PDF après exécution du script.</li>
+        </ul>
+        <p class="texte-projet">
+        De plus, il fallait présenter les résultats lors d'un oral de 10 minutes à l'aide d'un diaporama que nous avons réalisé sous PowerPoint. 
+        J'étais dans un groupe de 3 pour ce projet.
+        </p>
+    </p>
+  </li>
+
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">B. Organisation du travail </h2>
+    <p class="texte-projet">
+
+        Dans l'organisation du projet, nous avons décidé de répartir le travail de cette façon :
+        <ul class="texte-projet">
+            <li>	Je m'occupais de la préparation des données, de l'analyse exploratoire de la chronique et de la modélisation tendancielle de celle-ci.</li>
+            <li>    Le deuxième membre s'occupait de la modélisation saisonnière et de l'analyse des résidus.</li>
+            <li>    Le troisième membre participait aussi à l'analyse des résidus et s'occupait de la prévision des nuitées en 2024.</li>
+        </ul>
+        <p class="texte-projet">
+        Cependant, dû à des problèmes d'organisation et de temps, j'ai dû participer à l'élaboration de 
+        <strong>l'ensemble des parties citées ci-dessus</strong>.
+        Pour la rédaction du rapport, nous avons décidé d'un commun accord que je l'élaborais entièrement. 
+        Les deux autres membres l'ont vérifié pour qu'ils repèrent les erreurs éventuelles. 
+        Les deux autres membres se sont occupés entièrement de la présentation sous PowerPoint.
+        </p>
+    </p>
+
+    <!-- Ajout des images d'illustrations-->
+    <div class="proj-container">
+        <figure class="proj-legends">
+          <img class="proj-img rounded-4" src="{{ url_for('static', filename='description_prevision/Analyse_chronique_1.png') }}"
+           alt="Chronique des nuitées en Normandie">
+          <figcaption>Chronique des nuitées en normandie</figcaption>
+        </figure>
+        <figure class="proj-legends">
+          <img src="{{ url_for('static', filename='description_prevision/Analyse_chronique_4.png') }}" 
+          class="proj-img rounded-4" alt="coefficients saisonniers">
+          <figcaption>Coefficients saisonniers définitifs</figcaption>
+        </figure>
+      </div>
+  </li>
+  
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">C. Démarche et résolution de problème </h2>
+    <p class="texte-projet">
+        Les difficultés de ce projet sont assez diverses. Premièrement, on avait une difficulté par rapport à 
+        l'utilisation du R pour l'analyse chronique notamment dans le calcul des prévisions où il fallait prêter attention à l'exécution. 
+        Deuxièmement, il y avait une difficulté dans la création du rapport automatisée avec le R-Markdown qui était nouveau. 
+        On observait des erreurs qui étaient difficiles à régler. Le R-Markdown peut se révéler très fragile 
+        et nécessite donc une attention constante sur les changements de programme. Une dernière difficulté de ce projet était plus sur 
+        l'interprétation de certains résultats qui pouvaient être compliqués à comprendre et à expliquer au grand public. On pouvait le voir dans 
+        l'analyse des résidus où l'interprétation était très compliquée pour notre groupe à comprendre et à expliquer à l'interlocuteur.
+    </p>
+  </li>
+  <li>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2">D. Conclusion </h2>
+    <p class="texte-projet">
+        Pour conclure, j'ai pu apprendre comment faire une <strong>analyse chronique</strong> en retenant les différentes étapes de celle-ci. 
+        De plus, ce projet m'a permis de mieux maîtriser le R-Markdown dans la production d'un rapport automatisée. 
+        Cependant, je dois m'améliorer dans <strong>l'interprétation de certains résultats complexes</strong>. 
+        Je peux ajouter à mes compétences à améliorer la présentation orale avec un diaporama plus propre <strong>en gérant mieux le temps imparti</strong>.
+    </p>
+  </li>
+</ol>
+<!---------------------------------------->
+<!---------------------------------------->
+
+<!-- Partie résultat du projet (photos, vidéos, téléchargement de fichiers) -->
+<div class="proj-container">
+    <figure class="proj-legends">
+      <img class="proj-img rounded-4" src="{{ url_for('static', filename='description_prevision/Analyse_chronique_7.png') }}"
+       alt="Visualisation de la chronique et de la prévision">
+      <figcaption>Visualisation de la chronique et de la prévision</figcaption>
+    </figure>
+    <figure class="proj-legends">
+      <img src="{{ url_for('static', filename='description_prevision/Analyse_chronique_8.png') }}" 
+      class="proj-img rounded-4" alt="Tableau de prévision"
+      >
+      <figcaption>Tableau de prévision des valeurs</figcaption>
+    </figure>
+  </div>
+
+  <div class="center">
+    <a href="{{ url_for('static', filename='description_prevision/description_prevision.zip') }}"  
+    download>
+        <button class="download-btn">Télécharger le dossier du projet ZIP</button>
+    </a>
+  </div>
+<!----------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------->
+
+{% endblock %}

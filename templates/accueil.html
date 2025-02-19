@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% from "_macro_liste_formations.html" import formation %}
+    <meta charset="utf-8">
+    <title>Mon Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}" />
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    </script>
+  </head>
+
+  <body class="bg-accueil">
+     <!-- Navigation-->
+     <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top">Mon Portfolio</a>
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- En-tête de la page (Titre du Portfolio) -->
+    <header class="masthead bg-primary text-white text-center" id="page-top">
+        <img class="rounded-pill img-fluid img-thumbnail" height="100" width="10%" 
+            alt="Photo de Julien" src="{{ url_for('static', filename='profil.png') }}"/> 
+        <br /> 
+        <h1>
+            Julien RENOULT
+        </h1>
+        <h3>
+           Étudiant Data Science 
+            <br />
+        </h3>
+        
+    </header>
+    <br />
+    <!-- Présentation de la page -->
+     <section class="text-center bg-success text-light rounded-4">
+     <h2> Bienvenue à mon Portfolio ! </h2>
+
+     <p id = "paragraph_presentation" class="font-weight-normal"> 
+        Bonjour, en tant qu'étudiant en fin de <strong><i>BUT Science des données</i></strong>, je suis à la recherche d'une poursuite d'étude / d'un travail dans le domaine de la donnée. 
+        Toujours à la recherche de renforcer mes acquis, de nature curieux et déterminé, je participe à des projets divers et variés passant en revue l'analyse, le développement web et l'apprentissage supervisée des données.
+        <br />
+        Pour vous éclairer sur qui je suis, cette page va présenter mes formations, expériences professionnelles et mes compétences.
+        Pour voir les preuves de ces compétences développées, je vous propose de vous embarquer à la fin de cette page sur mes différents projets académiques et personnelles.
+     </p>
+    </section>
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+
+    <!-- Présentation de mes Formations et "Certifications" -->
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center  m-2 p-2"> Mes formations </h2>
+    <ul class="list-group list-group-horizontal list-unstyled justify-content-center">{{ 
+        formation("BUT Science des Données", 
+        "IUT Grand Ouest Normandie, Pôle de Caen, Campus de Lisieux", 
+        "2022-2025", 
+        "Formation Bac +3 sur les connaissances statistiques et informatiques du monde de la donnée. 
+        Permet de voir essentiellement toutes les étapes de la vie des données avec les langages et logiciels associés.
+        Choix du parcours Visualisation et Conception d'Outils Décisionnel qui se concentre plus sur le BI avec le dévoleppement web et la gestion de projets informatiques.",
+        "logo-IUT-grand-ouest-normandie.png",
+        "Logo IUT Grabd Ouest Normandie",
+        100, 130,
+        "https://www.onisep.fr/ressources/univers-formation/formations/post-bac/but-science-des-donnees-parcours-visualisation-conception-d-outils-decisionnels",
+        "") }}</ul>
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+     <!-- Icon Divider-->
+     <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+          </svg></div>
+        <div class="divider-custom-line"></div>
+    </div>
+    <!-- Présentation de mes expériences professionnelles -->
+    <section>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center m-2 p-2"> Mes expériences professionnelles </h2>
+        <ul class="list-group list-group-horizontal list-unstyled">
+            <li>{{ formation(
+            "Assistant Data Scientist", 
+            "Crédit Agricole, Bois-Guillaume (Rouen)", 
+            "Avril-Juin 2024",
+            "J'ai participé à diverses missions telles que la création de tableau de synthèse 
+            et d'analyse en collaboration avec l'équipe data. 
+            Participe aussi au développement 
+            d'outils d'automatisation de tableau de synthèse. 
+            Utilisation de SAS et de SQL.",
+            "Crédit_Agricole.svg.png",
+            "Logo du Crédit Agricole",
+            100,
+            130,
+            "https://www.creditagricole.info/caisse/credit-agricole-normandie-seine/",
+            "SAS, SQL, Excel et VBA") }}</li>
+
+            <li>{{ formation(
+                "Data Analyst", 
+                "EDF, CNPE Paluel", 
+                "Juillet 2024 - Août 2025",
+                "Le seul Data Analyst dans l'EC (Equipe Commune) de Paluel. 
+                J'ai mené la création de plusieurs outils décisionnels permettant d'améliorer la performance de l'équipe avec le contexte de la VD4.
+                Cela concernait l'automatisation, l'analyse et la gestion de données dans l'EC.
+                Les langages/logiciels que j'ai utilisé sont Python, SQL, Excel, VBA et Power BI.",
+                "Électricité_de_France_logo.svg.png",
+                "Logo d'EDF",
+                100,
+                200,
+                "https://www.edf.fr/centrale-nucleaire-paluel",
+                "Python, SQL, Excel, VBA et Power BI") }}</li>
+        </ul>
+  </section>
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+         <!-- Icon Divider-->
+         <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+                <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+              </svg></div>
+            <div class="divider-custom-line"></div>
+        </div>
+    <!-- Présentation de mes compétences (quatre blocs) -->
+    <section>
+    <h2 class="text-center rounded-pill bg-dark text-light justify-content-center  m-2 p-2"> Mes compétences </h2>
+    <div class="text-light container">
+      <!-- Section Statistiques/Machine learning -->
+      <div class="row">
+          <div class="col bg-secondary border border-0 m-5 pb-1 rounded-4">
+          <section>
+              <h3 class="text-decoration-underline fw-bold ps-3 text-center"> Statistique </h3>
+              <ul>
+                  <article class="mb-2">
+                  <li>
+                    Analyse exploratoire (univariée/bivariée)
+                  </li>
+                  <li>
+                    Tests statistiques (t-test, ANOVA, Chi², ...)
+                  </li>
+                  <li>
+                    Analyse chronologique (motifs, prédictions)
+                  </li>
+                  <li>
+                    Méthodes de sondages (techniques aléatoires, stratifiées, ...)
+                  </li>
+                  <li>
+                    Estimation d'indicateurs (intervalle de confiance, ...)
+                  </li>
+                  <li>
+                    Inférence statistique (hypothèse)
+                  </li>
+                  </article>
+              </ul>
+              </section>
+          </div>
+
+          <div class="col bg-secondary m-5 pb-5 rounded-4">
+          <section>
+              <h3 class="text-decoration-underline fw-bold ps-3 text-center"> Machine Learning </h3>
+              <article class="mb-3 ps-3">
+                  <ul>
+                    <li>
+                        Traitement de langage naturel (NLP)
+                    </li>
+                    <li>
+                        Méthodes factorielles (ACP, ACM)
+                    </li>
+                    <li>
+                        Clustering (K-means, hiérarchique)
+                    </li>
+                    <li>
+                        Régression linéaire
+                      </li>
+                    <li>
+                        Arbre de décisions
+                    </li>
+                    <li>
+                        Méthode des plus proches voisins
+                      </li>
+                    <li>
+                        Deep learning (réseaux de neurones)
+                    </li>
+                    <li>
+                        Utilisation des frameworks (TensorFlow, scikit-learn)
+                    </li>
+                    <li>
+                        Optimisation des modèles (courbes ROC, validation croisée, ...)
+                    </li>
+                  </ul>
+              </article>
+          </section>
+          </div>
+          <div class="row">
+            <div class="col bg-secondary border border-0 m-5 pb-5 rounded-4">
+            <section>
+                <h3 class="text-decoration-underline fw-bold ps-3 text-center"> Business Intelligence </h3>
+                <ul>
+                    <article class="mb-3">
+                    <li>
+                        Création d'ETL
+                    </li>
+                    <li>
+                        Nettoyage des données
+                    </li>
+                    <li>
+                        Transformation et agrégation des données
+                    </li>
+                    <li>
+                        Collecte de données (Scraping, API, etc)
+                    </li>
+                    <li>
+                        Conception/Gestion de base de données (SQL, NoSQL)
+                    </li>
+                    <li>
+                        Création de tableaux de bords interactifs
+                    </li>
+                    <li>
+                        Développement web (PHP, Flask, HTML, CSS, JS)
+                    </li>
+                    <li>
+                        Gestion d'une très grande quantité de données (Big Data)
+                    </li>
+                    </article>
+                </ul>
+                </section>
+            </div>
+  
+            <div class="col bg-secondary m-5 pb-5 rounded-4">
+            <section>
+                <h3 class="text-decoration-underline fw-bold ps-3 text-center"> Communication </h3>
+                <article class="mb-3 ps-3">
+                    <li>
+                        Rédaction de rapports statistiques
+                    </li>
+                    <li>
+                        Présentation à l'oral à des publics variés
+                    </li>
+                    <li>
+                        Documentation des processus/outils créés
+                    </li>
+                    <li>
+                        RGPD
+                    </li>
+                    <li>
+                        Gestion de projet AGILE
+                    </li>
+                </article>
+            </section>
+            </div>
+      </div>
+    </div>
+</section>
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+     <!-- Icon Divider-->
+     <div class="divider-custom">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+            <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+          </svg></div>
+        <div class="divider-custom-line"></div>
+    </div>
+
+     <!-- Présentation de mes outils (animation) -->
+    <section>
+        <h2 class="text-center rounded-pill bg-dark text-light justify-content-center  m-2 p-2"> Mes outils </h2>
+<!-- Version 2 -->
+<div class="container bg-white rounded">
+    <div class="carousel-container">
+        <button class="btn btn-primary me-2" id="prev-button">&lt;</button>
+        <div class="carousel-items text-danger" id="carousel-items">
+            <!-- Les items seront injectés ici -->
+             {% for i in index %}
+                {% if i == 0 %}
+                    {% set active = "active" %}
+                {% else %}
+                    {% set active = "" %}
+                {% endif %}
+            <!-- Ajout du titre et des logos-->
+                <div class="carousel-item_2 {{ active }}">
+                    <h2 class="text-center bg-dark text-light rounded m-2 p-2">{{ items[i] }}</h2>
+                    <div class="row ps-5">
+                        <!-- Ajout des logos concernés -->
+                        {% for log in dict_icon[items[i]] %}
+                                <!-- Portfolio Item 1-->
+                                <div class="col-md-6 col-lg-4 pb-3 pb-3 d-flex justify-content-center align-items-center">
+                                        <img src="{{ url_for('static', filename=log[0]) }}" 
+                                        height="{{ log[1] }}" width="{{ log[2] }}"  
+                                        alt="{{ log[3] }}" class="img-fluid" />
+                                </div>
+                        {% endfor %}
+                    </div>
+                </div>
+             {% endfor %}
+        <button class="btn btn-primary ms-2" id="next-button">&gt;</button>
+    </div>
+    </div>
+</div>
+</section>
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+
+    <!-- Icon Divider-->
+    <div class="divider-custom">
+      <div class="divider-custom-line"></div>
+      <div class="divider-custom-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-star" viewBox="0 0 16 16">
+          <path d="M2.866 14.85c-.078.444.36.791.746.593l4.39-2.256 4.389 2.256c.386.198.824-.149.746-.592l-.83-4.73 3.522-3.356c.33-.314.16-.888-.282-.95l-4.898-.696L8.465.792a.513.513 0 0 0-.927 0L5.354 5.12l-4.898.696c-.441.062-.612.636-.283.95l3.523 3.356-.83 4.73zm4.905-2.767-3.686 1.894.694-3.957a.56.56 0 0 0-.163-.505L1.71 6.745l4.052-.576a.53.53 0 0 0 .393-.288L8 2.223l1.847 3.658a.53.53 0 0 0 .393.288l4.052.575-2.906 2.77a.56.56 0 0 0-.163.506l.694 3.957-3.686-1.894a.5.5 0 0 0-.461 0z"/>
+        </svg></div>
+      <div class="divider-custom-line"></div>
+  </div>
+  
+    <!-- Présentation des projets/SAE que j'ai fait -->
+    <section>
+      <h2 class="text-center rounded-pill bg-dark text-light justify-content-center  m-2 p-2" id="portfolio"> Mes projets les plus marquants</h2>
+
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_201') }}">2.01 : Conception et implémentation d'une base de données</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto">
+                Ce projet avait pour but de concevoir une base de données SQL (SQLite) 
+                et d'y intégrer une interface graphique sur la gestion d'articles en caisse avec Python.
+            </p>
+              <a href="{{ url_for('projet_201') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4"  
+            src="{{ url_for('static', filename='supermarche_sae201.jpg') }}" 
+            alt="Supermarche_logo">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_203') }}">2.03 : Régression sur données réelles</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto">
+                Ce projet consistait à la création d'une modèle linéaire sur <a target="_blank" href="https://www.calculators.org/health/ffmi.php">l'indice de masse maigre</a>
+                avec un jeu de données consitué de 252 patients de sexe masculin.</p>
+              <a href="{{ url_for('projet_203') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='FFMI maigre.png') }}" 
+            height="50%" width="30%"
+            alt="FFMI_logo">
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_204') }}">2.04 : Datavisualisation</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto">
+              Cette SAÉ consistait à un concours entre tous les étudiants de première année en BUT Science des Données.
+              Il consistait à représenter des visuels graphiques avec le logiciel Tableau sur la fréquentation annuelle des gares de 
+              la SNCF. Ce travail devait se faire dans un délai très court entre 9h00 et 15h30.    
+            </p>
+              <a href="{{ url_for('projet_204') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" 
+            src="{{ url_for('static', filename='Sncf-logo.svg.png') }}" 
+            alt="logo_sncf"
+            width="40%" height="60%">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_205') }}">2.05 Construction et présentation d'indicateurs de performance</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto">
+                Cela consistait à la création d'un tableau de bord sur le logiciel Tableau pointant sur la thématique des milliardaires dans le monde.
+                Il fallait de plus ajouter un storytelling pour indiquer les moments intéressants de l'analyse de ce tableau de bord.
+              </p>
+              <a href="{{ url_for('projet_205') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" 
+            src="{{ url_for('static', filename='logo_milliardaire.png') }}"  
+            alt="Logo homme milliardaire"
+            width="20%"
+            height="20%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_206') }}">2.06 : Analyse de données, reporting et datavisualisation</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto">
+              L'analyse de données sur plus de 24 millions d'enregistrements concernant 
+              les horodateurs dans la ville de Paris sur son site 
+              <a target="_blank" href="https://opendata.paris.fr/explore/dataset/horodateurs-mobiliers/table/?disjunctive.arrondt&disjunctive.zoneres&disjunctive.tarif&disjunctive.regime&disjunctive.paiement&disjunctive.acces_pmr">Open Data</a>.
+            </p>
+              <a href="{{ url_for('projet_206') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='close-up-electric-car-france.jpg') }}" 
+            width="15%" height="15%"
+            alt="horodateur">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_301') }}">3.VCOD.01 Collecte automatisée de données web</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto">
+                Ce projet se basait sur une collecte automatisée de données web à l'aide d'API. 
+                Le but était de développer une plateforme de suivie des performances financières sur un intervalle de deux ans.
+                Deux API vont être utilisées qui sont 
+                <a target="_blank" href="https://www.alphavantage.co/">
+                    Alpha Vantage</a> et
+                <a target="_blank" href="https://gnews.io/">GNews</a>. 
+              </p>
+              <a href="{{ url_for('projet_301') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='accountant-calculating-profit-with-financial-analysis-graphs.jpg') }}"
+            width="20%" height="20%" 
+            alt="finance_montée_barre">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_302') }}">3.02 : Intégration de données dans un datawarehouse</a>
+              </h3>
+              <div class="mb-1 text-muted">2023-2024</div>
+              <p class="card-text mb-auto"> 
+                L'objectif de ce projet était de pouvoir créer un entrepôt de données opérationnel (MySQL) 
+                sur la pollution au Royaume-Uni (<a target="_blank" href="https://www.airviro.com/airviro/">Aviro</a>) avec les différentes étapes de création. 
+                Cela s'accompagnait ensuite d'un axe d'analyse à mener sur ces données insérées.
+            </p>
+              <a href="{{ url_for('projet_302') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" src="{{ url_for('static', filename='airviro_logo.png') }}" 
+            height="20%"
+            width="20%"
+            alt="logo_airviro">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_303') }}">3.03 Description et prévision de données temporelles</a>
+              </h3>
+              <div class="mb-1 text-muted">2023</div>
+              <p class="card-text mb-auto"> 
+                L'objectif de ce projet est d'apprendre à mener une analyse chronique sur les nuitées en Normandie avec une modélisation pour la prévision de ces nuitées. 
+                Ces données sont disponibles sur le site de l'<a target="_blank" href="https://www.insee.fr/fr/statistiques/serie/010598624">INSEE</a>.
+              </p>
+              <a href="{{ url_for('projet_303') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='normandie_region.jpg') }}" 
+            alt="logo_region"
+            height="20%"
+            width="20%"
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_401') }}">4.VCOD.01 : Développement d'un composant d'une solution décisionnelle</a>
+              </h3>
+              <div class="mb-1 text-muted">2024</div>
+            <p class="card-text mb-auto">
+              Nous devions développer un tableau de bord web interactif sur l'analyse des retards de trains en France de la SNCF. 
+              Le développement se faisait avec les langages PHP avec HTML, CSS et Javascript (ChartJS).
+            </p>
+              <a href="{{ url_for('projet_401') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" 
+            src="{{ url_for('static', filename='Sncf-logo.svg.png') }}" 
+            alt="logo_sncf"
+            width="40%" height="60%">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_402') }}">4.02 : Reporting d'une analyse multivariée</a>
+              </h3>
+              <div class="mb-1 text-muted">2024</div>
+              <p class="card-text mb-auto">
+                Dans le cadre de ce projet, on devait mener une analyse multivariée (ACP, clustering K-Means) 
+                sur les agriculteurs affiliés au régime agricole d'assurance maladie (Mutualité Sociale Agricole). 
+                Elle se portait notamment sur un questionnaire d'inclusion, plus spécifiquement sur les activités d'élevage et de culture.
+              </p>
+              <a href="{{ url_for('projet_402') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='Mutualite_sociale_agricole_logo.svg.png') }}" 
+            alt="logo_mutualite_sociale_agricole"
+            width="20%" height="20%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_501') }}">5.VCOD.01 : Analyse et conception d'outil décisionnel</a>
+              </h3>
+              <div class="mb-1 text-muted">2024</div>
+            <p class="card-text mb-auto">
+              Ce projet avait pour objectif de créer une application web sur le thème du cinéma. 
+              Nous avons utilisé le Framework Flask avec Python pour le développement web avec 
+              l'utilisation d'une base de données SQLite pour l'interaction avec le site web. 
+            </p>
+              <a href="{{ url_for('projet_501') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='logo_cinema.jpg') }}" 
+            width="20%" height="20%"
+            alt="logo_cinema">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-success">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_502') }}">5.02 : Migration de données vers ou depuis un environnement NoSQL</a>
+              </h3>
+              <div class="mb-1 text-muted">2024-2025</div>
+              <p class="card-text mb-auto">
+                L'objectif de ce projet est de créer une base de données via mongoDB à partir de plusieurs jeu de données 
+                pour ensuite utiliser les requêtes du SGBD pour analyser ces données en jouant sur les liens qui ont entre eux.
+              </p>
+              <a href="{{ url_for('projet_502') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block" 
+            src="{{ url_for('static', filename='mongodb.png') }}" 
+            alt="logo_mongo_db"
+            width="20%" height="20%">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-2">
+        <div class="col-md-6">
+          <div class="card flex-md-row mb-4 box-shadow h-md-250">
+            <div class="card-body d-flex flex-column align-items-start">
+              <strong class="d-inline-block mb-2 text-primary">SAÉ</strong>
+              <h3 class="mb-0">
+                <a class="text-dark" href="{{ url_for('projet_503') }}">5.03 : Mise en œuvre d'un processus de Datamining</a>
+              </h3>
+              <div class="mb-1 text-muted">2024-2025</div>
+            <p class="card-text mb-auto">
+              Pour cette SAE, nous devions travailler sur la création d'un modèle de Deep Learning pour la prédiction 
+              de la satisfaction clientèle d'Olist selon son commentaire. 
+            </p>
+              <a href="{{ url_for('projet_503') }}">Voir plus</a>
+            </div>
+            <img class="card-img-right flex-auto d-none d-md-block rounded-4" 
+            src="{{ url_for('static', filename='logo_olist.png') }}" 
+            alt="logo_olist"
+            width="28%" height="28%"
+            >
+          </div>
+        </div>
+    </div>
+    </section>
+    <!------------------------------------------------------------------------>
+    <!------------------------------------------------------------------------>
+
+    <!-- Footer-->
+    <footer class="footer text-center" id="contact">
+      <div class="container">
+          <div class="row">
+              <!-- Footer Social Icons-->
+              <div class="col-lg-4 mb-5 mb-lg-0">
+                  <h4 class="text-uppercase mb-4">Autour du WEB</h4>
+                  <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://github.com/julien-data-analyst"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3 .3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5 .3-6.2 2.3zm44.2-1.7c-2.9 .7-4.9 2.6-4.6 4.9 .3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3 .7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3 .3 2.9 2.3 3.9 1.6 1 3.6 .7 4.3-.7 .7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3 .7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3 .7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></a>
+                  <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="mailto:julienrenoult76460@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48L48 64zM0 176L0 384c0 35.3 28.7 64 64 64l384 0c35.3 0 64-28.7 64-64l0-208L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg></a>
+                  <a class="btn btn-outline-light btn-social mx-1" target="_blank" href="https://www.linkedin.com/in/julien-renoult-1062b5253/" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="#74C0FC" d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg></a>
+              </div>
+              <!-- Footer About Text-->
+              <div class="col-lg-4">
+                  <h4 class="text-uppercase mb-4">À propos de ce site</h4>
+                  <p class="lead mb-0">
+                      Si vous voulez voir comment a été développé ce site web, vous pouvez le retrouver sur 
+                      le dépot <a>GitHub</a>. Il a été déployé sous Render.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+        <!-- Bootstrap JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Code pour faire l'animation entre les différents conteneur sur les technologies utilisées -->
+        <script>
+            const items = {{ items | tojson }};
+            let currentIndex = 0;
+            //console.log(items);
+
+            const carouselItemsContainer = document.getElementById('carousel-items'); // Récupération des différents container
+            const prevButton = document.getElementById('prev-button'); // Récupération des différents boutons
+            const nextButton = document.getElementById('next-button');
+            //console.log(carouselItemsContainer);
+            //console.log(prevButton);
+            //console.log(nextButton);
+
+            // Fonction pour mettre à jour l'animation
+            function updateCarousel(next = true) {
+                const carouselItems = document.querySelectorAll('.carousel-item_2');
+
+                // Retirer la classe active de tous les items
+                carouselItems.forEach((item, index) => {
+                    item.classList.remove('active');
+
+                    // Définir la direction du glissement
+                    if (index === currentIndex) {
+                        if (next) {
+                            item.style.transform = 'translateX(-100%)'; // Glissement vers la gauche
+                        } else {
+                            item.style.transform = 'translateX(100%)'; // Glissement vers la droite
+                        }
+                    }
+                });
+
+                // Ajouter la classe active au nouvel index
+                setTimeout(() => {
+                    const newActiveItem = carouselItems[currentIndex];
+                    newActiveItem.classList.add('active');
+                    newActiveItem.style.transform = 'translateX(0)'; // Centre
+                }, 50); // Laisse le temps pour l'effet fluide
+            }
+
+            // Bouton précédent
+            prevButton.addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + items.length) % items.length;
+                updateCarousel(false); // Direction : gauche
+            });
+
+            // Bouton suivant
+            nextButton.addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % items.length;
+                updateCarousel(true); // Direction : droite
+            });
+        </script>
+</body>
